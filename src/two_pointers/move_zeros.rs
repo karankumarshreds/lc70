@@ -1,4 +1,4 @@
-pub fn run(nums: &mut Vec<i32>) {
+pub fn move_zeros(nums: &mut Vec<i32>) {
     let mut curr = 0;
     let mut next = 0;
     while next < nums.len() {
@@ -12,4 +12,19 @@ pub fn run(nums: &mut Vec<i32>) {
         }
         next += 1;
     }
+}
+
+pub fn run() {
+    let mut v = vec![0, 1, 0, 3, 12];
+    move_zeros(&mut v);
+    assert_eq!(v, vec![1, 3, 12, 0, 0], "move_zeros.rs");
+    let mut v = vec![2, 0, 1];
+    move_zeros(&mut v);
+    assert_eq!(v, vec![2, 1, 0], "move_zeros.rs");
+    let mut v = vec![2, 1];
+    move_zeros(&mut v);
+    assert_eq!(v, vec![2, 1], "move_zeros.rs");
+    let mut v = vec![1, 2, 3, 1];
+    move_zeros(&mut v);
+    assert_eq!(v, vec![1, 2, 3, 1], "move_zeros.rs");
 }
